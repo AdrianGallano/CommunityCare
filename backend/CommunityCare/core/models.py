@@ -4,9 +4,14 @@ class Location(models.Model):
     coordinates = models.CharField(max_length=100)
     address = models.CharField(max_length=500)
 
+    def __str__(self):
+        return self.address
+
     class Meta:
         indexes = [models.Index(fields=["address"])]
         ordering = ["address"]
+
+    
     
 class Family(models.Model):
     title = models.CharField(max_length=255)
@@ -15,11 +20,17 @@ class Family(models.Model):
     duration_of_residence = models.IntegerField(help_text="no of days")
     location = models.ForeignKey(Location, on_delete=models.CASCADE)
 
+    def __str__(self):
+        return self.title
+
     class Meta:
         indexes = [models.Index(fields=["title"])]
 
 class Citizenship(models.Model):
     title = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.title
 
     class Meta:
         indexes = [models.Index(fields=["title"])]
@@ -27,17 +38,26 @@ class Citizenship(models.Model):
 class EducationalAttainment(models.Model):
     title = models.CharField(max_length=255)
 
+    def __str__(self):
+        return self.title
+
     class Meta:
         indexes = [models.Index(fields=["title"])]
 
 class EmployementStatus(models.Model):
     title = models.CharField(max_length=255)
+    
+    def __str__(self):
+        return self.title
 
     class Meta:
         indexes = [models.Index(fields=["title"])]
     
 class MaritalStatus(models.Model):
     title = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.title
 
     class Meta:
         indexes = [models.Index(fields=["title"])]
@@ -54,6 +74,9 @@ class Member(models.Model):
     educational_attainment = models.OneToOneField(EducationalAttainment, on_delete=models.CASCADE)
     employement_status = models.OneToOneField(EmployementStatus, on_delete=models.CASCADE)
     family = models.ManyToManyField(Family)
+
+    def __str__(self):
+        return self.name
 
     class Meta:
         indexes = [models.Index(fields=["name"])]
