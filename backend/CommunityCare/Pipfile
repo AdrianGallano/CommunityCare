@@ -8,7 +8,6 @@ django = "*"
 djangorestframework = "*"
 python-dotenv = "*"
 django-debug-toolbar = "*"
-mysqlclient = "*"
 djangorestframework-yaml = "*"
 djangorestframework-xml = "*"
 djangorestframework-csv = "*"
@@ -16,6 +15,7 @@ django-filter = "*"
 djangorestframework-simplejwt = "*"
 djoser = "*"
 djangorestframework-jwt = "*"
+pymysql = "*"
 
 [dev-packages]
 
