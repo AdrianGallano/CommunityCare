@@ -19,6 +19,7 @@ from .models import (
     MaritalStatus,
     Member,
 )
+from .paginations import CustomPageNumberPagination
 
 
 class LocationsViewSet(ModelViewSet):
@@ -26,7 +27,7 @@ class LocationsViewSet(ModelViewSet):
     queryset = Location.objects.all()
     search_fields = ["address", "coordinates"]
     ordering_fields = ["address", "coordinates"]
-
+    pagination_class = CustomPageNumberPagination
 
 class SingleLocationViewSet(ModelViewSet):
     serializer_class = LocationSerializer
@@ -36,6 +37,8 @@ class SingleLocationViewSet(ModelViewSet):
 class FamiliesViewSet(ModelViewSet):
     serializer_class = FamilySerializer
     queryset = Family.objects.all()
+    pagination_class = CustomPageNumberPagination
+
     search_fields = [
         "title",
         "no_of_members",
@@ -64,6 +67,7 @@ class CitizenshipsViewSet(ModelViewSet):
     queryset = Citizenship.objects.all()
     search_fields = ["title"]
     ordering_fields = ["title"]
+    pagination_class = CustomPageNumberPagination
 
 
 class SingleCitizenshipViewSet(ModelViewSet):
@@ -76,6 +80,7 @@ class CitizenshipsViewSet(ModelViewSet):
     queryset = Citizenship.objects.all()
     search_fields = ["title"]
     ordering_fields = ["title"]
+    pagination_class = CustomPageNumberPagination
 
 
 class SingleCitizenshipViewSet(ModelViewSet):
@@ -88,6 +93,7 @@ class EducationalAttainmentsViewSet(ModelViewSet):
     queryset = EducationalAttainment.objects.all()
     search_fields = ["title"]
     ordering_fields = ["title"]
+    pagination_class = CustomPageNumberPagination
 
 
 class SingleEducationalAttainmentViewSet(ModelViewSet):
@@ -100,6 +106,7 @@ class EmploymentStatusesViewSet(ModelViewSet):
     queryset = EmploymentStatus.objects.all()
     search_fields = ["title"]
     ordering_fields = ["title"]
+    pagination_class = CustomPageNumberPagination
 
 
 class SingleEmploymentStatusViewSet(ModelViewSet):
@@ -112,6 +119,7 @@ class MaritalStatusesViewSet(ModelViewSet):
     queryset = MaritalStatus.objects.all()
     search_fields = ["title"]
     ordering_fields = ["title"]
+    pagination_class = CustomPageNumberPagination
 
 
 class SingleMaritalStatusViewSet(ModelViewSet):
@@ -160,7 +168,7 @@ class MembersViewSet(ModelViewSet):
         "family__location__address",
         "family__location__coordinates",
     ]
-
+    pagination_class = CustomPageNumberPagination
 
 
 
