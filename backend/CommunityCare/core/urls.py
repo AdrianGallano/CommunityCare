@@ -1,4 +1,4 @@
-from django.urls import path, include
+from django.urls import path, include, re_path
 from . import views
 
 
@@ -21,12 +21,12 @@ urlpatterns = [
         name="location-detail",
     ),
     path(
-        "family",
+        "families",
         views.FamiliesViewSet.as_view({"get": "list", "post": "create"}),
         name="families",
     ),
     path(
-        "family/<int:pk>",
+        "families/<int:pk>",
         views.SingleFamilyViewSet.as_view(
             {
                 "get": "retrieve",

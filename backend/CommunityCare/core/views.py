@@ -20,9 +20,10 @@ from .models import (
     Member,
 )
 from .paginations import CustomPageNumberPagination
-
+from rest_framework.permissions import IsAuthenticated
 
 class LocationsViewSet(ModelViewSet):
+    permission_classes = [IsAuthenticated]
     serializer_class = LocationSerializer
     queryset = Location.objects.all()
     search_fields = ["address", "coordinates"]
@@ -30,11 +31,12 @@ class LocationsViewSet(ModelViewSet):
     pagination_class = CustomPageNumberPagination
 
 class SingleLocationViewSet(ModelViewSet):
+    permission_classes = [IsAuthenticated]
     serializer_class = LocationSerializer
     queryset = Location.objects.all()
 
-
 class FamiliesViewSet(ModelViewSet):
+    permission_classes = [IsAuthenticated]
     serializer_class = FamilySerializer
     queryset = Family.objects.all()
     pagination_class = CustomPageNumberPagination
@@ -58,11 +60,12 @@ class FamiliesViewSet(ModelViewSet):
 
 
 class SingleFamilyViewSet(ModelViewSet):
+    permission_classes = [IsAuthenticated]
     serializer_class = FamilySerializer
     queryset = Family.objects.all()
 
-
 class CitizenshipsViewSet(ModelViewSet):
+    permission_classes = [IsAuthenticated]
     serializer_class = CitizenshipSerializer
     queryset = Citizenship.objects.all()
     search_fields = ["title"]
@@ -71,11 +74,13 @@ class CitizenshipsViewSet(ModelViewSet):
 
 
 class SingleCitizenshipViewSet(ModelViewSet):
+    permission_classes = [IsAuthenticated]
     serializer_class = CitizenshipSerializer
     queryset = Citizenship.objects.all()
 
 
 class CitizenshipsViewSet(ModelViewSet):
+    permission_classes = [IsAuthenticated]
     serializer_class = CitizenshipSerializer
     queryset = Citizenship.objects.all()
     search_fields = ["title"]
@@ -84,11 +89,13 @@ class CitizenshipsViewSet(ModelViewSet):
 
 
 class SingleCitizenshipViewSet(ModelViewSet):
+    permission_classes = [IsAuthenticated]
     serializer_class = CitizenshipSerializer
     queryset = Citizenship.objects.all()
 
 
 class EducationalAttainmentsViewSet(ModelViewSet):
+    permission_classes = [IsAuthenticated]
     serializer_class = EducationalAttainmentSerializer
     queryset = EducationalAttainment.objects.all()
     search_fields = ["title"]
@@ -97,11 +104,13 @@ class EducationalAttainmentsViewSet(ModelViewSet):
 
 
 class SingleEducationalAttainmentViewSet(ModelViewSet):
+    permission_classes = [IsAuthenticated]
     serializer_class = EducationalAttainmentSerializer
     queryset = EducationalAttainment.objects.all()
 
 
 class EmploymentStatusesViewSet(ModelViewSet):
+    permission_classes = [IsAuthenticated]
     serializer_class = EmploymentStatusSerializer
     queryset = EmploymentStatus.objects.all()
     search_fields = ["title"]
@@ -110,11 +119,13 @@ class EmploymentStatusesViewSet(ModelViewSet):
 
 
 class SingleEmploymentStatusViewSet(ModelViewSet):
+    permission_classes = [IsAuthenticated]
     serializer_class = EmploymentStatusSerializer
     queryset = EmploymentStatus.objects.all()
 
 
 class MaritalStatusesViewSet(ModelViewSet):
+    permission_classes = [IsAuthenticated]
     serializer_class = MaritalStatusSerializer
     queryset = MaritalStatus.objects.all()
     search_fields = ["title"]
@@ -123,11 +134,13 @@ class MaritalStatusesViewSet(ModelViewSet):
 
 
 class SingleMaritalStatusViewSet(ModelViewSet):
+    permission_classes = [IsAuthenticated]
     serializer_class = MaritalStatusSerializer
     queryset = MaritalStatus.objects.all()
 
 
 class MembersViewSet(ModelViewSet):
+    permission_classes = [IsAuthenticated]
     serializer_class = MemberSerializer
     queryset = Member.objects.all()
     search_fields = [
@@ -174,5 +187,6 @@ class MembersViewSet(ModelViewSet):
 
 
 class SingleMemberViewSet(ModelViewSet):
+    permission_classes = [IsAuthenticated]
     serializer_class = MemberSerializer
     queryset = Member.objects.all()

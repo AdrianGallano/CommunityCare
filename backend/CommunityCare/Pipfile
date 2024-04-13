@@ -13,6 +13,7 @@ djangorestframework-yaml = "*"
 djangorestframework-xml = "*"
 djangorestframework-csv = "*"
 django-filter = "*"
+djangorestframework-simplejwt = "*"
 
 [dev-packages]
 

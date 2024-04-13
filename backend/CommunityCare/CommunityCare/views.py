@@ -6,7 +6,7 @@ from rest_framework.decorators import api_view, renderer_classes
 from django.http import HttpResponsePermanentRedirect
 from rest_framework.renderers import TemplateHTMLRenderer
 
-
+@api_view(["GET"])
 def index(request):
     return HttpResponsePermanentRedirect(reverse_lazy("docs"))
 
