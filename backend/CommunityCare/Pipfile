@@ -12,6 +12,7 @@ mysqlclient = "*"
 djangorestframework-yaml = "*"
 djangorestframework-xml = "*"
 djangorestframework-csv = "*"
+django-filter = "*"
 
 [dev-packages]
 
