@@ -14,6 +14,8 @@ djangorestframework-xml = "*"
 djangorestframework-csv = "*"
 django-filter = "*"
 djangorestframework-simplejwt = "*"
+djoser = "*"
+djangorestframework-jwt = "*"
 
 [dev-packages]
 
