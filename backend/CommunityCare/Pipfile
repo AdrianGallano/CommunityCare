@@ -9,6 +9,9 @@ djangorestframework = "*"
 python-dotenv = "*"
 django-debug-toolbar = "*"
 mysqlclient = "*"
+djangorestframework-yaml = "*"
+djangorestframework-xml = "*"
+djangorestframework-csv = "*"
 
 [dev-packages]
 
