@@ -3,9 +3,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Docs</title>
+    <title>API Documentation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        h1, h2, h3 {
+            margin-bottom: 10px;
+        }
+        code, pre {
+            background-color: #f0f0f0;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        ul {
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 <body>
-    <p>Output: Docs</p>
+<h1>CommunityCare API Documentation</h1>
+
+<h2>Endpoints:</h2>
+
+<h2>Authentication and Authorization:</h2>
+
+<p>Authentication is required for certain endpoints. Use the following endpoints to obtain and refresh JWT tokens:</p>
+
+<ul>
+    <li><code>POST /api/token/</code> - Obtain JWT token</li>
+    <li><code>POST /api/token/refresh/</code> - Refresh JWT token</li>
+</ul>
+
+<h2>Searching:</h2>
+<ul>
+    <li><code>?search=value</code></li>
+</ul>
+
+
+<h2>Ordering:</h2>
+<ul>
+<li><code>?ordering=value</code></li>
+</ul>
+
+<h2>Pagination:</h2>
+<ul>
+<li><code>?page_size=value&page=value</code></p>
+</ul>
+
+<ul>
+<li>page_size = resources per page</li>
+<li>page = page number (offset) </li>
+</ul>
+
+<h2>Resources:</h2>
+
+<h3>Location:</h3>
+<ul>
+    <li><code>GET /api/locations</code> - List all locations</li>
+    <li><code>POST /api/locations</code> - Create a new location</li>
+    <li><code>GET /api/locations/{id}</code> - Retrieve a single location</li>
+    <li><code>PUT /api/locations/{id}</code> - Update a location</li>
+    <li><code>PATCH /api/locations/{id}</code> - Partially update a location</li>
+    <li><code>DELETE /api/locations/{id}</code> - Delete a location</li>
+</ul>
+
+<h3>Family:</h3>
+<ul>
+    <li><code>GET /api/families</code> - List all families</li>
+    <li><code>POST /api/families</code> - Create a new family</li>
+    <li><code>GET /api/families/{id}</code> - Retrieve a single family</li>
+    <li><code>PUT /api/families/{id}</code> - Update a family</li>
+    <li><code>PATCH /api/families/{id}</code> - Partially update a family</li>
+    <li><code>DELETE /api/families/{id}</code> - Delete a family</li>
+</ul>
+
+<h3>Citizenship:</h3>
+<ul>
+    <li><code>GET /api/citizenships</code> - List all citizenships</li>
+    <li><code>POST /api/citizenships</code> - Create a new citizenship</li>
+    <li><code>GET /api/citizenships/{id}</code> - Retrieve a single citizenship</li>
+    <li><code>PUT /api/citizenships/{id}</code> - Update a citizenship</li>
+    <li><code>PATCH /api/citizenships/{id}</code> - Partially update a citizenship</li>
+    <li><code>DELETE /api/citizenships/{id}</code> - Delete a citizenship</li>
+</ul>
+
+<h3>Education Attainment:</h3>
+<ul>
+    <li><code>GET /api/educational-attainments</code> - List all educational attainments</li>
+    <li><code>POST /api/educational-attainments</code> - Create a new educational attainment</li>
+    <li><code>GET /api/educational-attainments/{id}</code> - Retrieve a single educational attainment</li>
+    <li><code>PUT /api/educational-attainments/{id}</code> - Update an educational attainment</li>
+    <li><code>PATCH /api/educational-attainments/{id}</code> - Partially update an educational attainment</li>
+    <li><code>DELETE /api/educational-attainments/{id}</code> - Delete an educational attainment</li>
+</ul>
+
+<h3>Employement Status:</h3>
+<ul>
+    <li><code>GET /api/employment-statuses</code> - List all employment statuses</li>
+    <li><code>POST /api/employment-statuses</code> - Create a new employment status</li>
+    <li><code>GET /api/employment-statuses/{id}</code> - Retrieve a single employment status</li>
+    <li><code>PUT /api/employment-statuses/{id}</code> - Update an employment status</li>
+    <li><code>PATCH /api/employment-statuses/{id}</code> - Partially update an employment status</li>
+    <li><code>DELETE /api/employment-statuses/{id}</code> - Delete an employment status</li>
+</ul>
+
+<h3>Marital Status:</h3>
+<ul>
+    <li><code>GET /api/marital-statuses</code> - List all marital statuses</li>
+    <li><code>POST /api/marital-statuses</code> - Create a new marital status</li>
+    <li><code>GET /api/marital-statuses/{id}</code> - Retrieve a single marital status</li>
+    <li><code>PUT /api/marital-statuses/{id}</code> - Update a marital status</li>
+    <li><code>PATCH /api/marital-statuses/{id}</code> - Partially update a marital status</li>
+    <li><code>DELETE /api/marital-statuses/{id}</code> - Delete a marital status</li>
+</ul>
+
+<h3>Member:</h3>
+<ul>
+    <li><code>GET /api/members</code> - List all members</li>
+    <li><code>POST /api/members</code> - Create a new member</li>
+    <li><code>GET /api/members/{id}</code> - Retrieve a single member</li>
+    <li><code>PUT /api/members/{id}</code> - Update a member</li>
+    <li><code>PATCH /api/members/{id}</code> - Partially update a member</li>
+    <li><code>DELETE /api/members/{id}</code> - Delete a member</li>
+</ul>
+
 </body>
 </html>
