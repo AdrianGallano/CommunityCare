@@ -1,0 +1,13 @@
+[]Packages
+    -[x]leaflet
+    -[x]react-leaflet
+    -[]react-router
+    -[x]tailwindcss
+    -[x]shadcn/ui
+
+[]Flow of the project CC
+    -[]
+
+
+    
+    
