@@ -12,12 +12,12 @@ djangorestframework-yaml = "*"
 djangorestframework-xml = "*"
 djangorestframework-csv = "*"
 django-filter = "*"
-djangorestframework-simplejwt = "*"
 djoser = "*"
 djangorestframework-jwt = "*"
 pymysql = "*"
+djangorestframework-simplejwt = "*"
 
 [dev-packages]
 
 [requires]
-python_version = "3.9"
+python_version = "3.12"
