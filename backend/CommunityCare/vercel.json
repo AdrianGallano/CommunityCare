@@ -1,4 +1,6 @@
 {
+
+    "regions": ["hkg1"],
     "builds": [{
         "src": "CommunityCare/wsgi.py",
         "use": "@vercel/python",
