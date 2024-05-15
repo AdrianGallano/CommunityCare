@@ -1,0 +1,137 @@
+{
+  "family": [
+    {
+      "family_id": 1,
+      "family_name": "Doe Family",
+      "address": {
+        "street": "123 Elm St",
+        "city": "Springfield",
+        "state": "IL",
+        "zipcode": "62704"
+      },
+      "members": [
+        {
+          "id": 1,
+          "name": "John Doe",
+          "age": 45,
+          "gender": "Male",
+          "ethnicity": "Hispanic",
+          "occupation": "Engineer",
+          "income": 75000
+        },
+        {
+          "id": 2,
+          "name": "Jane Doe",
+          "age": 42,
+          "gender": "Female",
+          "ethnicity": "Hispanic",
+          "occupation": "Teacher",
+          "income": 60000
+        },
+        {
+          "id": 3,
+          "name": "Jack Doe",
+          "age": 12,
+          "gender": "Male",
+          "ethnicity": "Hispanic",
+          "occupation": "Student",
+          "income": 0
+        },
+        {
+          "id": 4,
+          "name": "Jill Doe",
+          "age": 8,
+          "gender": "Female",
+          "ethnicity": "Hispanic",
+          "occupation": "Student",
+          "income": 0
+        }
+      ],
+      "coordinates": {
+        "latitude": 37.7749,
+        "longitude": -122.4194
+      },
+      "id": "1a9f"
+    },
+    {
+      "id": "6345",
+      "family_name": "molino",
+      "address": {
+        "street": "2121",
+        "city": "OC",
+        "state": "1213",
+        "zipcode": "2200"
+      },
+      "members": [],
+      "coordinates": {
+        "latitude": 15.163601202011952,
+        "longitude": 120.37550790008484
+      }
+    },
+    {
+      "id": "4485",
+      "family_name": "molkopdsfa",
+      "address": {
+        "street": "jgosdfjsdq",
+        "city": "smfklasnf",
+        "state": "NLKSDGNSLDFNQ",
+        "zipcode": "KNGLNSFN"
+      },
+      "members": [
+        {
+          "name": "KNFLKDFN",
+          "age": "12",
+          "gender": "KLNGDF",
+          "ethnicity": "KDFGKLDS",
+          "occupation": "LKNLSNGALKM",
+          "income": "",
+          "id": 1715726920300
+        }
+      ],
+      "coordinates": {
+        "latitude": 15.023173306615568,
+        "longitude": 120.41031479634235
+      }
+    },
+    {
+      "id": "18f9",
+      "family_name": "dasd",
+      "address": {
+        "street": "fasfa",
+        "city": "fdasda",
+        "state": "faasda",
+        "zipcode": "fadsfasda"
+      },
+      "members": [],
+      "coordinates": {
+        "latitude": 14.85414043634484,
+        "longitude": 120.28141721743071
+      }
+    },
+    {
+      "id": "5616",
+      "family_name": "Molino",
+      "address": {
+        "street": "1631 Waterdam Rd.",
+        "city": "Olongapo City",
+        "state": "Philippines",
+        "zipcode": "2200"
+      },
+      "members": [
+        {
+          "name": "dominic molino",
+          "age": "12",
+          "gender": "M",
+          "ethnicity": "filipino",
+          "occupation": "wala",
+          "income": "0",
+          "id": 1715737937935
+        }
+      ],
+      "coordinates": {
+        "latitude": 14.857776386412638,
+        "longitude": 120.29316571661867
+      }
+    }
+  ]
+}
