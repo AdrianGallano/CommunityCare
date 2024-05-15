@@ -20,7 +20,7 @@ const Popup = ({ barangay }) => {
         <CardTitle>{barangay.name}</CardTitle>
       </CardHeader>
       <CardContent>
-        <Sheet>
+        <Sheet>x
           <SheetTrigger asChild>
             <Button>More Information</Button>
           </SheetTrigger>
