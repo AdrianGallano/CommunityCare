@@ -15,6 +15,8 @@ from dotenv import load_dotenv
 import os
 from datetime import timedelta
 import pymysql
+from corsheaders.defaults import default_headers
+from corsheaders.defaults import default_methods
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -54,11 +56,13 @@ INSTALLED_APPS = [
     "debug_toolbar",
     # local
     "core",
+    "corsheaders",
 ]
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
@@ -171,7 +175,7 @@ REST_FRAMEWORK = {
         "rest_framework.throttling.UserRateThrottle",
     ],
     "DEFAULT_THROTTLE_RATES": {
-        "user": "5000/day",
+        "user": "10000/day",
     },
     "DEFAULT_AUTHENTICATION_CLASSES": [
         "rest_framework_simplejwt.authentication.JWTAuthentication",
@@ -180,6 +184,15 @@ REST_FRAMEWORK = {
 
 
 SIMPLE_JWT = {
-    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=5),
-    "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
+    "ACCESS_TOKEN_LIFETIME": timedelta(days=1),
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=2),
 }
+
+CORS_ALLOWED_ORIGINS = [
+    "http://127.0.0.1",
+    "http://localhost:5173",
+]
+
+CORS_ALLOW_METHODS = (*default_methods,)
+
+CORS_ALLOW_HEADERS = (*default_headers,)

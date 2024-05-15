@@ -16,6 +16,7 @@ djoser = "*"
 djangorestframework-jwt = "*"
 pymysql = "*"
 djangorestframework-simplejwt = "*"
+django-cors-headers = "*"
 
 [dev-packages]
 

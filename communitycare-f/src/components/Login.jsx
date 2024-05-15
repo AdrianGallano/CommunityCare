@@ -1,4 +1,5 @@
-import LogInService from "./../services/LoginService";
+
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import {
@@ -12,8 +13,46 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
 const LogIn = () => {
-  let token = LogInService();
-  console.log(token);
+  const [userData, setUserData] = useState({
+    username: "",
+    password: ""
+  });
+
+  const [token, setToken] = useState(null);
+  const [error, setError] = useState(null);
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setUserData({
+      ...userData,
+      [name]: value
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      console.log(userData);
+      const response = await fetch("http://127.0.0.1:8000/api/token/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(userData),
+      });
+
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+
+      const jsonData = await response.json();
+      setToken(jsonData.access);
+      localStorage.setItem('accessToken', `Bearer ${jsonData.access}`);
+    } catch (error) {
+      setError(error);
+      throw error;
+    }
+  };
 
   return (
     <>
@@ -25,18 +64,21 @@ const LogIn = () => {
               Welcome to CommunityCare
             </CardTitle>
             <CardDescription className="text-xs text-center">
-              Enter your email below to login to your account
+              Enter your username below to login to your account
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <form>
+            <form onSubmit={handleSubmit}>
               <div className="grid gap-4">
                 <div className="grid gap-2">
-                  <Label htmlFor="email">Email</Label>
+                  <Label htmlFor="username">username</Label>
                   <Input
-                    id="email"
-                    type="email"
-                    placeholder="example@gmail.com"
+                    id="username"
+                    type="text"
+                    name="username"
+                    placeholder="Megatron3000"
+                    onChange={handleInputChange}
+                    autoComplete="username"
                     required
                   />
                 </div>
@@ -44,7 +86,15 @@ const LogIn = () => {
                   <div className="flex items-center">
                     <Label htmlFor="password">Password</Label>
                   </div>
-                  <Input id="password" type="password" required />
+                  <Input
+                    id="password"
+                    type="password"
+                    name="password"
+                    placeholder="************"
+                    onChange={handleInputChange}
+                    autoComplete="current-password"
+                    required
+                  />
                 </div>
                 <Button type="submit" className="w-full">
                   Login
@@ -52,7 +102,7 @@ const LogIn = () => {
               </div>
             </form>
             <div className="mt-4 text-center text-sm">
-              Don&apos;t have an account?{" "}
+              Don't have an account?{" "}
               <Link to={"/signup"}> Register here</Link>
             </div>
           </CardContent>
