@@ -1,25 +1,8 @@
-from django.urls import path, include, re_path
+from django.urls import path
 from . import views
 
 
 urlpatterns = [
-    path(
-        "locations",
-        views.LocationsViewSet.as_view({"get": "list", "post": "create"}),
-        name="locations",
-    ),
-    path(
-        "locations/<int:pk>",
-        views.SingleLocationViewSet.as_view(
-            {
-                "get": "retrieve",
-                "put": "update",
-                "patch": "partial_update",
-                "delete": "destroy",
-            }
-        ),
-        name="location-detail",
-    ),
     path(
         "families",
         views.FamiliesViewSet.as_view({"get": "list", "post": "create"}),

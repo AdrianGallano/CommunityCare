@@ -1,7 +1,6 @@
 from django.shortcuts import render
 from rest_framework.viewsets import ModelViewSet
 from .serializers import (
-    LocationSerializer,
     FamilySerializer,
     CitizenshipSerializer,
     MemberSerializer,
@@ -11,7 +10,6 @@ from .serializers import (
     MemberSerializer,
 )
 from .models import (
-    Location,
     Family,
     Citizenship,
     EducationalAttainment,
@@ -22,18 +20,6 @@ from .models import (
 from .paginations import CustomPageNumberPagination
 from rest_framework.permissions import IsAuthenticated
 
-class LocationsViewSet(ModelViewSet):
-    permission_classes = [IsAuthenticated]
-    serializer_class = LocationSerializer
-    queryset = Location.objects.all()
-    search_fields = ["address", "coordinates"]
-    ordering_fields = ["address", "coordinates"]
-    pagination_class = CustomPageNumberPagination
-
-class SingleLocationViewSet(ModelViewSet):
-    permission_classes = [IsAuthenticated]
-    serializer_class = LocationSerializer
-    queryset = Location.objects.all()
 
 class FamiliesViewSet(ModelViewSet):
     permission_classes = [IsAuthenticated]
@@ -46,16 +32,16 @@ class FamiliesViewSet(ModelViewSet):
         "no_of_members",
         "total_family_income",
         "duration_of_residence",
-        "location__address",
-        "location__coordinates",
+        "address",
+        "coordinates",
     ]
     ordering_fields = [
         "title",
         "no_of_members",
         "total_family_income",
         "duration_of_residence",
-        "location__address",
-        "location__coordinates",
+        "address",
+        "coordinates",
     ]
 
 
@@ -63,6 +49,7 @@ class SingleFamilyViewSet(ModelViewSet):
     permission_classes = [IsAuthenticated]
     serializer_class = FamilySerializer
     queryset = Family.objects.all()
+
 
 class CitizenshipsViewSet(ModelViewSet):
     permission_classes = [IsAuthenticated]
@@ -159,8 +146,6 @@ class MembersViewSet(ModelViewSet):
         "family__no_of_members",
         "family__total_family_income",
         "family__duration_of_residence",
-        "family__location__address",
-        "family__location__coordinates",
     ]
     ordering_fields = [
         "name",
@@ -178,12 +163,8 @@ class MembersViewSet(ModelViewSet):
         "family__no_of_members",
         "family__total_family_income",
         "family__duration_of_residence",
-        "family__location__address",
-        "family__location__coordinates",
     ]
     pagination_class = CustomPageNumberPagination
-
-
 
 
 class SingleMemberViewSet(ModelViewSet):

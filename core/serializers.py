@@ -1,7 +1,6 @@
 from rest_framework import serializers
 from .models import (
     Citizenship,
-    Location,
     Family,
     Member,
     MaritalStatus,
@@ -10,17 +9,7 @@ from .models import (
 )
 
 
-class LocationSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = Location
-        fields = ["id", "address", "coordinates"]
-
-
 class FamilySerializer(serializers.HyperlinkedModelSerializer):
-    location = LocationSerializer(read_only=True)
-    location_id = serializers.PrimaryKeyRelatedField(
-        queryset=Location.objects.all(), source="location", write_only=True
-    )
 
     class Meta:
         model = Family
@@ -30,8 +19,8 @@ class FamilySerializer(serializers.HyperlinkedModelSerializer):
             "no_of_members",
             "total_family_income",
             "duration_of_residence",
-            "location",
-            "location_id",
+            "address",
+            "coordinates",
         ]
         depth = 1
 
